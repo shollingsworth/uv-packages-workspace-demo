@@ -1,0 +1,20 @@
+[project]
+name = "package-meta"
+version = "0.1.0"
+description = "Meta package"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "package-a",
+    "package-b",
+]
+
+[tool.uv.workspace]
+members = [
+    "package_a",
+    "package_b"
+]
+
+[tool.uv.sources]
+package-a = { workspace = true }
+package-b = { workspace = true }
